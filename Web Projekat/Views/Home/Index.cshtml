@@ -1,0 +1,150 @@
+﻿@using Web_Projekat.Models
+
+@{
+    ViewBag.Title = "Manifestacije";
+}
+<html>
+<head>
+    <style>
+        #ivice {
+            border-radius: 3px;
+        }
+        #popup{
+                width:100%;
+                position:center;
+            }
+        #popup tr:hover {background-color:#357da9;}
+    </style>
+</head>
+
+<body style="background-color:#ababab">
+@if (ViewBag.pretraga == null)
+{
+<table id="popup"  class="table">
+    <tr>
+        <th>Tip Manifestacije</th>
+        <th>Naziv Manifestacije</th>
+        <th>Broj Karata</th>
+        <th>Datum i Vreme Odrzavanja</th>
+        <th>Cena Karte</th>
+        <th>Ulica i Broj</th>
+        <th>Mesto</th>
+        <th>Postanski Broj</th>
+        <th>Status</th>
+        <th>Validan</th>
+    </tr>
+
+        @foreach (Manifestacija manifestacija in Model)
+        {
+<tr>
+    <td>@manifestacija.TipManifestacije</td>
+    <td>@manifestacija.Naziv</td>
+    <td>@manifestacija.BrojMesta</td>
+    <td>@manifestacija.DatumIVremeOdrzavanja</td>
+    <td>@manifestacija.CenaKarte</td>
+    <td>@manifestacija.MestoOdrzavanja.UlicaIBroj</td>
+    <td>@manifestacija.MestoOdrzavanja.Mesto</td>
+    <td>@manifestacija.MestoOdrzavanja.PostanskiBroj</td>
+    <td>@manifestacija.StatusManifestacije</td>
+    <td>@manifestacija.Validan</td>
+    <td>
+        <form method="post" action="~/Home/Detalji">
+            <input type="text" name="id" value="@manifestacija.IDManifestacija" hidden />
+            <input id="ivice" type="submit" value="Detalji" />
+        </form>
+    </td>
+</tr>
+                
+         
+        }
+
+</table>
+    <p>&nbsp;</p>
+
+    <h2>Pretraga Manifestacija</h2>
+    <table class="table">
+        <tr>
+            <th>Naziv Manifestacije</th>
+            <th>Mesto Odrzavanja</th>
+            <th>Datum i Vreme Odrzavanja</th>
+            <th>Cena Karte</th>
+        </tr>
+
+        <tr>
+            <form action="/Home/Pretraga" method="post">
+                <td>
+                    <select id="ivice" name="naziv">
+                        @foreach (Manifestacija manifestacija in Model)
+                        {
+                            <option>@manifestacija.Naziv</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select id="ivice" name="mestoOdrzavanja.Mesto">
+                        @foreach (Manifestacija manifestacija in Model)
+                        {
+                            <option>@manifestacija.MestoOdrzavanja.Mesto</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select id="ivice" name="datum">
+                        @foreach (Manifestacija manifestacija in Model)
+                        {
+                            <option>@manifestacija.DatumIVremeOdrzavanja</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select id="ivice" name="cena">
+                        @foreach (Manifestacija manifestacija in Model)
+                        {
+                            <option>@manifestacija.CenaKarte</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <input id="ivice" type="submit" value="Pretraga" />
+                </td>
+            </form>
+        </tr>
+    </table>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>Tip Manifestacije</th>
+            <th>Naziv Manifestacije</th>
+            <th>Broj Karata</th>
+            <th>Datum i Vreme Odrzavanja</th>
+            <th>Cena Karte</th>
+            <th>Ulica i Broj</th>
+            <th>Mesto</th>
+            <th>Postanski Broj</th>
+            <th>Status</th>
+            <th>Validan</th>
+        </tr>
+
+        
+        @foreach (var manifestacije in ViewBag.pretraga)
+        {            
+            <tr>
+                <td>@manifestacije.TipManifestacije</td>
+                <td>@manifestacije.Naziv</td>
+                <td>@manifestacije.BrojMesta</td>
+                <td>@manifestacije.DatumIVremeOdrzavanja</td>
+                <td>@manifestacije.CenaKarte</td>
+                <td>@manifestacije.MestoOdrzavanja.UlicaIBroj</td>
+                <td>@manifestacije.MestoOdrzavanja.Mesto</td>
+                <td>@manifestacije.MestoOdrzavanja.PostanskiBroj</td>
+                <td>@manifestacije.StatusManifestacije</td>
+                <td>@manifestacije.Validan</td>
+            </tr>
+        }
+    </table>
+
+}
+</body>
+</html>

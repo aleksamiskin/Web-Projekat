@@ -1,0 +1,4 @@
+1a2b3c;Bleja;20-Apr-00 04:20:00;5000;Milica;Milosevic;REZERVISANA;REGULAR;aleksa3
+abc;Avenged Sevenfold;23-Feb-22 22:00:00;1220;Milica;Milosevic;REZERVISANA;REGULAR;aleksa2
+abc;Avenged Sevenfold;23-Feb-11 22:00:00;1220;Ana;Andjelic;REZERVISANA;REGULAR;aleksa2
+fbc;Exit;12-Aug-22 21:00:00;6900;Milica;Milosevic;REZERVISANA;REGULAR;aleksa2

@@ -1,0 +1,30 @@
+﻿@using Web_Projekat.Models
+
+<table class="table">
+    <tr>
+        <td>Manifestacija</td>
+        <td>Datum i vreme odrzavanja</td>
+        <td>Cena karte</td>
+        <td>Tip karte</td>
+        <td>Status karte</td>
+    </tr>
+
+    @foreach(Karta karta in Model)
+    {
+        if(karta.ImeKupca == ViewBag.Ime & karta.PrezimeKupca==ViewBag.Prezime)
+        {
+            <tr>
+                <td>@karta.NazivManifestacije</td>
+                <td>@karta.DatumIVreme</td>
+                <td>@karta.Cena</td>
+                <td>@karta.Tip</td>
+                <td>@karta.Status</td>
+                @if(karta.DatumIVreme < DateTime.Now)
+                {
+                    <td><a href="/Kupac/DodajKomentar">Dodaj komentar</a></td>
+                }
+
+            </tr>
+         }
+    }
+</table>

@@ -1,0 +1,66 @@
+﻿<h1>Kreiranje nove manifestacije</h1>
+
+@{
+    ViewBag.Title = "NewEvent";
+}
+
+<div>
+    @ViewBag.Message
+</div>
+
+@if (ViewBag.Error != null)
+{
+    @ViewBag.Error
+}
+
+<form action="~/Prodavac/KreirajManifestaciju" method="post">
+    <table>
+        <tr>
+            <td>Naziv manifestacije:</td>
+            <td><input type="text" name="naziv" /></td>
+        </tr>
+        <tr>
+            <td>Tip manifestacije:</td>
+            <td>
+                <select name="tipManifestacije">
+                    <option value="KONCERT">KONCERT</option>
+                    <option value="FESTIVAL">FESTIVAL</option>
+                    <option value="POZORISTE">POZORISTE</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Broj mesta:</td>
+            <td><input type="text" name="brojMesta" /></td>
+        </tr>
+        <tr>
+            <td>Datum i vreme odrzavanja:</td>
+            <td><input type="datetime-local" name="datumIVremeOdrzavanja" /></td>
+        </tr>
+        <tr>
+            <td>Cena karte:</td>
+            <td>
+                <input type="text" name="cenaKarte" />
+            </td>
+        </tr>
+        <tr>
+            <td>Ulica I Broj</td>
+            <td><input type="text" name="mestoOdrzavanja.UlicaIBroj" /></td>
+        </tr>
+        <tr>
+            <td>Mesto</td>
+            <td><input type="text" name="mestoOdrzavanja.Mesto" /></td>
+        </tr>
+        <tr>
+            <td>Postanski Broj</td>
+            <td><input type="text" name="mestoOdrzavanja.PostanskiBroj" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Kreiraj" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a href="/Prodavac/Index">Nazad</a>

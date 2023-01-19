@@ -1,0 +1,119 @@
+﻿@using Web_Projekat.Models
+
+<h1>Lista registrovanih korisnika</h1>
+
+@if (ViewBag.Rezultat == null)
+{
+    <table class="table">
+        <tr>
+            <th>Korisnicko Ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Pol</th>
+            <th>Datum Rodjenja</th>
+            <th>Uloga</th>
+            <th>Bodovi</th>
+            <th>Tip Korisnika</th>
+            <th>Validan</th>
+        </tr>
+
+        @foreach (Korisnik korisnik in Model)
+        {
+            <tr>
+                <td>@korisnik.KorisnickoIme</td>
+                <td>@korisnik.Ime</td>
+                <td>@korisnik.Prezime</td>
+                <td>@korisnik.Pol</td>
+                <td>@korisnik.DatumRodjenja</td>
+                <td>@korisnik.UlogaKorisnika</td>
+                <td align="center">@korisnik.Bodovi</td>
+                <td>@korisnik.TipKorisnika</td>
+                <td>@korisnik.Validan</td>
+                <td>
+                    <form method="post" action="~/Admin/ObrisiKorisnika">
+                        <input type="text" name="IDKorisnika" value="@korisnik.IDKorisnika" hidden />
+                        <input type="submit" value="Obrisi Korisnika" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    
+    <h2>Pretrazi korisnike</h2>
+    <form action="/Admin/PretragaPoImenu">
+        <input list="ime" name="ime" />
+        <datalist id="ime">
+            @foreach (Korisnik korisnik in Model)
+            {
+                <option value=@korisnik.Ime></option>
+            }
+        </datalist>
+        <input type="submit" value="Pretrazi po imenu" />
+    </form>
+
+    <form action="/Admin/PretragaPoPrezimenu">
+        <input list="prezime" name="prezime" />
+        <datalist id="prezime">
+            @foreach (Korisnik korisnik in Model)
+            {
+                <option value=@korisnik.Prezime></option>
+            }
+        </datalist>
+        <input type="submit" value="Pretrazi po prezimenu" />
+    </form>
+
+    <form action="/Admin/PretragaPoKorisnickomImenu">
+        <input list="korisnickoIme" name="korisnickoIme" />
+        <datalist id="korisnickoIme">
+            @foreach (Korisnik korisnik in Model)
+            {
+                <option value=@korisnik.KorisnickoIme></option>
+            }
+        </datalist>
+        <input type="submit" value="Pretrazi po korisnickom imenu" />
+    </form>
+
+    <h3>Filtriraj korisnika</h3>
+    <form action="/Admin/FiltriranjePoUloziKorisnika">
+        <select name="uloga">
+            <option value="ADMINISTRATOR">Administrator</option>
+            <option value="PRODAVAC">Prodavac</option>
+            <option value="KUPAC">Kupac</option>
+        </select>
+        <input type="submit" value="Filtriraj po ulozi korisnika" />
+    </form>
+    <p></p>
+    <form action="/Admin/FiltritanjePoTipuKorisnika">
+        <select name="tip">
+            <option value="BRONZANI">Bronzani</option>
+            <option value="SREBRNI">Srebrni</option>
+            <option value="ZLATNI">Zlatni</option>
+            <option value="NIJE_KUPAC">Nije kupac</option>
+        </select>
+        <input type="submit" value="Filtriraj po tipu korisnika" />
+    </form>
+
+}
+else
+{
+    <table class="table">
+        <tr><th>Rezultat pretrage</th></tr>
+
+        @foreach (var korisnik in ViewBag.Rezultat)
+        {
+            <tr>
+                <td>@korisnik.KorisnickoIme</td>
+                <td>@korisnik.Ime</td>
+                <td>@korisnik.Prezime</td>
+                <td>@korisnik.Pol</td>
+                <td>@korisnik.DatumRodjenja</td>
+                <td>@korisnik.UlogaKorisnika</td>
+                <td align="center">@korisnik.Bodovi</td>
+                <td>@korisnik.TipKorisnika</td>
+                <td>@korisnik.Validan</td>
+            </tr>
+        }
+    </table>
+}
+
+<a href="/Admin/Index">Nazad</a>

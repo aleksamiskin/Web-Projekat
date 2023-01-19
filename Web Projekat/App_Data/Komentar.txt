@@ -1,0 +1,7 @@
+;Bleka;asd;1;False
+;Bleja;asd;3;False
+;Bleja;aleksalalalal;3;False
+;asd;asd;1;False
+;Bleja;bluh;3;False
+;lolcic;asd;2;False
+;asd;asd;1;False

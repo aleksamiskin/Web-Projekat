@@ -1,0 +1,9 @@
+miskin;miskin;miskin;miskin;MUSKI;01-Jan-01 00:00:00;KUPAC;0;BRONZANI;1;True
+aleksa1;aleksa1;aleksa;aleksa;MUSKI;30-May-96 00:00:00;ADMINISTRATOR;0;NIJE_KUPAC;2;True
+aleksa2;aleksa2;aleksa;aleksa;MUSKI;30-May-96 00:00:00;PRODAVAC;0;NIJE_KUPAC;3;True
+nemanja;nemanja;nemanja;nemanjic;MUSKI;01-Jan-01 00:00:00;KUPAC;0;BRONZANI;4;True
+ana;ana;Ana;Andjelic;ZENSKI;01-Jan-01 00:00:00;KUPAC;0;BRONZANI;5;True
+milica;milica;Milica;Milosevic;ZENSKI;01-Jan-01 00:00:00;KUPAC;0;BRONZANI;6;False
+aleksa3;aleksa3;aleksa;aleksa;MUSKI;30-May-96 00:00:00;PRODAVAC;0;NIJE_KUPAC;7;True
+yamato;1234;Yamato;Miskin;MUSKI;01-Jan-01 00:00:00;KUPAC;0;BRONZANI;8;True
+pera;pers;Pera;Maric;MUSKI;03-Mar-78 00:00:00;PRODAVAC;0;NIJE_KUPAC;9;True

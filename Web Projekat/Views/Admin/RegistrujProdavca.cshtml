@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<div>
+    @ViewBag.Message
+</div>
+
+@if (ViewBag.Error != null)
+{
+    @ViewBag.Error
+}
+
+<form action="~/Admin/RegistrujProdavca" method="post">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="korisnickoIme" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="lozinka" /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="ime" /></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="prezime" /></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <select name="pol">
+                    <option value="MUSKI">MUSKI</option>
+                    <option value="ZENSKI">ZENSKI</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Birth Date:</td>
+            <td><input type="datetime-local" name="datumRodjenja" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Register" />
+            </td>
+        </tr>
+    </table>
+</form>

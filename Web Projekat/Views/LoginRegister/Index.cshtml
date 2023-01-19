@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <style type="text/css">
+        #ivice {
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    @ViewBag.Message
+</div>
+
+@if (ViewBag.Error != null)
+{
+    @ViewBag.Error
+}
+<div class="container" align="center">
+    <form action="~/LoginRegister/Login" method="post">
+        <h2>Login</h2>
+        <table>
+            <tr>
+                <td><input id="ivice" type="text" name="korisnickoIme" placeholder="Korisnicko ime" /></td>
+            </tr>
+            <tr>
+                <td><input id="ivice" type="password" name="lozinka" placeholder="Lozinka" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="ivice" class="col-md-12" type="submit" value="Login" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+<html>
+
+
+<head>
+    <style>
+        #ivice {
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        @ViewBag.Message
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+        @ViewBag.Error
+    }
+<div class="container" align="center">
+    <h2>Registracija</h2>
+    <form action="Register" method="post">
+        <table>
+            <tr>
+                <td><input id="ivice" type="text" name="korisnickoIme" placeholder="Korisnicko ime" /></td>
+            </tr>
+            <tr>
+                <td><input id="ivice" type="password" name="lozinka" placeholder="Lozinka" /></td>
+            </tr>
+            <tr>
+                <td><input id="ivice" type="text" name="ime" placeholder="Ime" /></td>
+            </tr>
+            <tr>
+
+                <td><input id="ivice" type="text" name="prezime" placeholder="Prezime" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="ivice" name="pol">
+                        <option value="MUSKI">MUSKI</option>
+                        <option value="ZENSKI">ZENSKI</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input id="ivice" type="datetime-local" name="datumRodjenja" placeholder="Datum Rodjenja" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="ivice" type="submit" value="Register"class="col-md-12"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

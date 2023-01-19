@@ -1,0 +1,6 @@
+1;Bleja;POZORISTE;4;20-Apr-00 04:20:00;5000;AKTIVNO;	Cara Dusana 69;Novi Sad;21000;aleksa3;False
+2;asd;KONCERT;123;12-Dec-20 00:00:00;400;AKTIVNO;	Beogradska 12;Beograd;21000;aleksa2;True
+3;LP;KONCERT;15000;12-Aug-21 21:00:00;3900;NEAKTIVNO;	Cara Dusana 70;Novi Sad;21000;aleksa2;False
+6;GD;KONCERT;1000;15-Sep-21 00:00:00;1200;NEAKTIVNO;	Pertovaradin 1;Novi Sad;21000;aleksa2;False
+4;Avenged Sevenfold;KONCERT;500;23-Feb-22 22:00:00;1220;AKTIVNO;	Cara Dusana 70;Novi Sad;21000;aleksa3;False
+5;Exit;FESTIVAL;10000;12-Aug-22 21:00:00;6900;AKTIVNO;	Cara Dusana 70;Novi Sad;21000;aleksa3;False

@@ -1,0 +1,34 @@
+﻿@using Web_Projekat.Models
+
+<table class="table">
+    <tr>
+        <th>Tip Manifestacije</th>
+        <th>Naziv Manifestacije</th>
+        <th>Broj Mesta</th>
+        <th>Datum i Vreme Odrzavanja</th>
+        <th>Cena Karte</th>
+        <th>Ulica i Broj</th>
+        <th>Mesto</th>
+        <th>Postanski Broj</th>
+        <th>Status Manifestacije</th>
+    </tr>
+
+    @foreach (Manifestacija manifestacija in Model)
+    {
+        if (ViewBag.Korisnik == manifestacija.KorisnickoIme)
+        {
+    <tr>
+        <td>@manifestacija.TipManifestacije</td>
+        <td>@manifestacija.Naziv</td>
+        <td>@manifestacija.BrojMesta</td>
+        <td>@manifestacija.DatumIVremeOdrzavanja</td>
+        <td>@manifestacija.CenaKarte</td>
+        <td>@manifestacija.MestoOdrzavanja.UlicaIBroj</td>
+        <td>@manifestacija.MestoOdrzavanja.Mesto</td>
+        <td>@manifestacija.MestoOdrzavanja.PostanskiBroj</td>
+        <td>@manifestacija.StatusManifestacije</td>
+    </tr>
+        }
+    }
+</table>
+<a href="/Prodavac/Index">Nazad</a>

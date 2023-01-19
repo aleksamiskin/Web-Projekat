@@ -1,0 +1,27 @@
+﻿@using Web_Projekat.Models
+
+<table class="table-bordered">
+    <tr>
+        <td>Kupac</td>
+        <td>Manifestacija</td>
+        <td>Tekst komentara</td>
+        <td>Ocena</td>
+        <td>Odobren</td>
+    </tr>
+    @foreach(Komentar komentar in Model)
+    {
+<tr>
+    <td>@komentar.Kupac</td>
+    <td>@komentar.Manifestacija</td>
+    <td>@komentar.TekstKomentara</td>
+    <td>@komentar.Ocena</td>
+    <td>@komentar.Odobren</td>
+    <td>
+        <form method="post" action="/Prodavac/OdobrenjeKomentara">
+            <input type="text" name="manifestacija" value="@komentar.Manifestacija" hidden />
+            <input type="submit" value="Odobrenje" />
+        </form>
+    </td>
+</tr>
+    }
+</table>

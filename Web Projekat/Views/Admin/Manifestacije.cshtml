@@ -1,0 +1,39 @@
+﻿@using Web_Projekat.Models
+
+@{
+    ViewBag.Title = "Manifestacije";
+}
+
+<table class="table">
+    <tr>
+        <th>Tip Manifestacije</th>
+        <th>Naziv Manifestacije</th>
+        <th>Broj Karata</th>
+        <th>Datum i vreme odrzavanja</th>
+        <th>Cena Karte</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (Manifestacija manifestacija in Model)
+    {
+        if (manifestacija.Validan.Equals(true))
+        {
+            <tr>
+                <td>@manifestacija.TipManifestacije</td>
+                <td>@manifestacija.Naziv</td>
+                <td>@manifestacija.BrojMesta</td>
+                <td>@manifestacija.DatumIVremeOdrzavanja</td>
+                <td>@manifestacija.CenaKarte</td>
+                <td>@manifestacija.StatusManifestacije</td>
+                <td>
+                    <form method="post" action="/Admin/ObrisiManifestaciju">
+                        <input type="text" name="id" value="@manifestacija.IDManifestacija" hidden />
+                        <input type="submit" value="Obrisi" />
+                    </form>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<a href="/Admin/Index">Nazad</a>

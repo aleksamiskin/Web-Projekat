@@ -1,0 +1,30 @@
+﻿@using Web_Projekat.Models
+
+<table class="table">
+    <tr>
+        <td>Identifikacija karte</td>
+        <td>Manifestacija</td>
+        <td>Datum i vreme odrzavanja</td>
+        <td>Cena karte</td>
+        <td>Tip karte</td>
+        <td>Status karte</td>
+        <td>Ime kupca</td>
+        <td>Prezime kupca</td>
+    </tr>
+
+    @foreach (Karta karta in Model)
+    {
+        
+                <tr>
+                    <td>@karta.IdKarte</td>
+                    <td>@karta.NazivManifestacije</td>
+                    <td>@karta.DatumIVreme</td>
+                    <td>@karta.Cena</td>
+                    <td>@karta.Tip</td>
+                    <td>@karta.Status</td>
+                    <td>@karta.ImeKupca</td>
+                    <td>@karta.PrezimeKupca</td>
+                </tr>
+           
+    }
+</table>

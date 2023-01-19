@@ -1,0 +1,4 @@
+milica;Bleja;odlican;5;False
+milica;event;komentar;1;True
+milica;lolcic;lol;1;True
+milica;dsadasadsads;asd;1;False
